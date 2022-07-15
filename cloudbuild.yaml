@@ -1,0 +1,5 @@
+steps:
+- name: 'docker'
+  args: [ 'buildx', 'create', '--name', 'mybuilder', '--use' ]
+- name: 'docker'
+  args: [ 'buildx', 'build', '--platform', 'linux/arm64,linux/amd64', '-t', 'us-central1-docker.pkg.dev/gke-autopilot-test/test/hello-ma:2', '--push', '.', ]

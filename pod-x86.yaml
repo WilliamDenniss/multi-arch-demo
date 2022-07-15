@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: x86pod
+  labels:
+    app: hello-appx86
+spec:
+  restartPolicy: Never
+  nodeSelector:
+    cloud.google.com/compute-class: Scale-Out
+  containers:
+  - name: hello-appx86
+    image: us-central1-docker.pkg.dev/gke-autopilot-test/test/hello-ma:2
